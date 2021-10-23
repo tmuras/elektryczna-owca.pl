@@ -1,0 +1,125 @@
+<!DOCTYPE HTML>
+<html>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Strona o Minecraft</title>
+<link href="assets/animate.css" rel="stylesheet">
+<link href="assets/style.css" rel="stylesheet">
+<link href='https://fonts.googleapis.com/css?family=Rokkitt' rel='stylesheet' type='text/css'>
+<body>
+<div class="jumbotron">
+    <div class="container">
+        <h1 class="glow in tlt">Dżungla Dzikiego Kota</h1>
+        <p class="tlt" data-in-effect="bounceInUp">Czyli ciekawostki o Minecraft.</p>
+        <br/>
+        <p class="tlt" data-in-effect="bounceInDown">Wykonanie przez Gang Dzikich Kotów.</p>
+
+    </div>
+</div>
+
+<div class="decal"></div>
+<div class="container fade in">
+    <div class="grid grid-pad">
+
+        <section class="col-1-1">
+            <h2>Oto dżungla, którą rządzi Kot</h2>
+            <p>Wszystko musi być logiczne.</p>
+            <p>Nie wszystko musi być logiczne.</p>
+            <p>Rządzi też <strike>Tasiemiec Uzbrojony</strike>.</p>
+            <p>Jak się oswaja konie? Trzeba na nie wsiadać aż nie pójdą z nich czaszki (uwaga to jest fake news!).</p>
+            <p>Zrboja z netherytu nie spala się w lawie.</p>
+            <p>To są niektóre z mobów. Przecież to logiczne.</p>
+            <ul>
+                <li>Bałwan</li>
+                <li>Axolotl</li>
+                <li>Dorsz</li>
+                <li>Koń</li>
+                <li>Pies</li>
+                <li>Papuga</li>
+                <li>Owca</li>
+                <li>Rozdymka</li>
+                <li>Żółw</li>
+                <li>Muł</li>
+                <li>Delfin</li>
+            </ul>
+            <div class="playground grid">
+                <div class="col-1-1 viewport">
+                    <div class="tlt">
+                        <ul class="texts" style="display: none">
+                            <li data-id="wizard">PAMIĘTAJ. Nie wszystko w Internecie jest...</li>
+                            <li data-id="fox">Prawdą!</li>
+                        </ul>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+    </div>
+</div>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
+<script src="assets/jquery.fittext.js"></script>
+<script src="assets/jquery.lettering.js"></script>
+<script src="https://yandex.st/highlightjs/7.3/highlight.min.js"></script>
+<script src="jquery.textillate.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+<script>
+    $(function () {
+
+
+        var animateClasses = 'flash bounce shake tada swing wobble pulse flip flipInX flipOutX flipInY flipOutY fadeIn fadeInUp fadeInDown fadeInLeft fadeInRight fadeInUpBig fadeInDownBig fadeInLeftBig fadeInRightBig fadeOut fadeOutUp fadeOutDown fadeOutLeft fadeOutRight fadeOutUpBig fadeOutDownBig fadeOutLeftBig fadeOutRightBig bounceIn bounceInDown bounceInUp bounceInLeft bounceInRight bounceOut bounceOutDown bounceOutUp bounceOutLeft bounceOutRight rotateIn rotateInDownLeft rotateInDownRight rotateInUpLeft rotateInUpRight rotateOut rotateOutDownLeft rotateOutDownRight rotateOutUpLeft rotateOutUpRight hinge rollIn rollOut';
+
+        var $form = $('.playground form')
+            , $viewport = $('.playground .viewport');
+
+
+        $('.jumbotron h1')
+            .fitText(0.5)
+            .textillate({in: {effect: 'rotateIn'}});
+
+        $('.jumbotron p')
+            .fitText(3.2, {maxFontSize: 18})
+            .textillate({initialDelay: 1000, in: {delay: 3, shuffle: true}});
+
+        setTimeout(function () {
+            $('.fade').addClass('in');
+        }, 250);
+
+        setTimeout(function () {
+            $('h1.glow').removeClass('in');
+        }, 2000);
+
+        var $tlt = $viewport.find('.tlt');
+
+        'flash bounce shake tada swing wobble pulse flip flipInX flipOutX flipInY ' +
+        'flipOutY fadeIn fadeInUp fadeInDown fadeInLeft fadeInRight fadeInUpBig fadeInDownBig fadeInLeftBig ' +
+        'fadeInRightBig fadeOut fadeOutUp fadeOutDown fadeOutLeft fadeOutRight fadeOutUpBig ' +
+        'fadeOutDownBig fadeOutLeftBig fadeOutRightBig bounceIn bounceInDown bounceInUp ' +
+        'bounceInLeft bounceInRight bounceOut bounceOutDown bounceOutUp bounceOutLeft ' +
+        'bounceOutRight rotateIn rotateInDownLeft rotateInDownRight rotateInUpLeft rotateInUpRight ' +
+        'rotateOut rotateOutDownLeft rotateOutDownRight rotateOutUpLeft rotateOutUpRight hinge ' +
+        'rollIn rollOut';
+
+        var obj = {
+            "loop": true,
+            "in": {
+                "effect": "flash",
+                "shuffle": true,
+                "reverse": false,
+                "sync": false
+            },
+            "out": {
+                "effect": "hinge",
+                "shuffle": true,
+                "reverse": false,
+                "sync": false,
+            }
+        }
+        $tlt.textillate(obj);
+
+    });
+
+</script>
+</body>
+</html>
